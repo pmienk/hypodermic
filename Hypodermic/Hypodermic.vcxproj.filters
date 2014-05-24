@@ -178,6 +178,9 @@
     <ClInclude Include="ForwardTypeCaster.h">
       <Filter>Util</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerActivator.cpp" />
@@ -283,5 +286,39 @@
     <Filter Include="Util">
       <UniqueIdentifier>{b3336bdc-8e6c-42ea-89ee-c3ceb1ae5695}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Packaging">
+      <UniqueIdentifier>{1e0981e8-609f-4875-9bb2-091e83f7a9d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{d14567eb-221c-4aa3-b3fc-23d62466909f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\packaging\nuget\package.bat">
+      <Filter>Packaging</Filter>
+    </None>
+    <None Include="..\packaging\nuget\package.config">
+      <Filter>Packaging</Filter>
+    </None>
+    <None Include="..\packaging\nuget\package.gsl">
+      <Filter>Packaging</Filter>
+    </None>
+    <None Include="..\packaging\nuget\package.nuspec">
+      <Filter>Packaging</Filter>
+    </None>
+    <None Include="..\packaging\nuget\package.targets">
+      <Filter>Packaging</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\packaging\nuget\package.xml">
+      <Filter>Packaging</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
