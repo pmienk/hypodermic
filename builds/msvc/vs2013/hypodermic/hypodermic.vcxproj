@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8DBC5914-BB29-46A9-B50C-4C37EA34C849}</ProjectGuid>
+    <ProjectName>hypodermic</ProjectName>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugDLL|Win32">
+      <Configuration>DebugDLL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDLL|Win32">
+      <Configuration>ReleaseDLL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugDLL|x64">
+      <Configuration>DebugDLL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDLL|x64">
+      <Configuration>ReleaseDLL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugLTCG|Win32">
+      <Configuration>DebugLTCG</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseLTCG|Win32">
+      <Configuration>ReleaseLTCG</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugLTCG|x64">
+      <Configuration>DebugLTCG</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseLTCG|x64">
+      <Configuration>ReleaseLTCG</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugLIB|Win32">
+      <Configuration>DebugLIB</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseLIB|Win32">
+      <Configuration>ReleaseLIB</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugLIB|x64">
+      <Configuration>DebugLIB</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseLIB|x64">
+      <Configuration>ReleaseLIB</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType Condition="$(Configuration.IndexOf('DLL')) == -1">StaticLibrary</ConfigurationType>
+    <ConfigurationType Condition="$(Configuration.IndexOf('DLL')) != -1">DynamicLibrary</ConfigurationType>
+    <NuGetPackageImportStamp>51a0b160</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(ProjectDir)..\..\properties\$(Configuration).props" />
+    <Import Project="$(ProjectDir)..\..\properties\Output.props" />
+    <Import Project="$(ProjectDir)$(ProjectName).props" />
+    <Import Project="..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets')" />
+    <Import Project="..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets')" />
+    <Import Project="..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets')" />
+    <Import Project="..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets')" />
+    <Import Project="..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets')" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ActivatedData.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ActivatingData.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\AutowiredConstructor.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\BoostUuidHashFunctor.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\CircularDependencyDetector.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ComponentRegistration.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ComponentRegistrationLifetimeDecorator.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ComponentRegistry.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\Container.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ContainerActivator.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ContainerBuilder.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ContainerBuilder.hpp" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\CopyOnWriteRegistry.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\CurrentLifetimeScope.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\DelegateActivator.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\DelegateActivator.hpp" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\DependencyResolutionException.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ExternalRegistrySource.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ForwardTypeCaster.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\Helpers.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IActivatedData.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IActivatingData.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentContext.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentContext.hpp" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentLifetime.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentRegistration.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentRegistry.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IContainer.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IInitializable.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IInstanceActivator.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IInstanceLookup.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ILifetimeScope.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceActivator.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceLookup.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceOwnership.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceSharing.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IPreparingData.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IRegistrationBuilder.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IRegistrationSource.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IResolveOperation.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ISharingLifetimeScope.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ITypeCaster.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\KeyedService.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\LifetimeScope.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\MatchingScopeLifetime.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\NullptrWorkaround.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\PreparingData.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ProvidedInstanceActivator.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ProvidedInstanceActivator.hpp" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilder.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilder.hpp" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilderFactory.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilderFactory.hpp" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationData.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ResolveOperation.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RootScopeLifetime.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ScopeRestrictedRegistry.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\Service.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ServiceKey.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ServiceRegistrationInfo.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\SingleRegistrationStyle.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypeCaster.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypeCaster.hpp" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypedService.h" />
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypeIndexWorkaround.h" />
+    <ClInclude Include="..\..\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\CircularDependencyDetector.cpp" />
+    <ClCompile Include="..\..\..\..\src\ComponentRegistration.cpp" />
+    <ClCompile Include="..\..\..\..\src\ComponentRegistrationLifetimeDecorator.cpp" />
+    <ClCompile Include="..\..\..\..\src\ComponentRegistry.cpp" />
+    <ClCompile Include="..\..\..\..\src\Container.cpp" />
+    <ClCompile Include="..\..\..\..\src\ContainerActivator.cpp" />
+    <ClCompile Include="..\..\..\..\src\ContainerBuilder.cpp" />
+    <ClCompile Include="..\..\..\..\src\CopyOnWriteRegistry.cpp" />
+    <ClCompile Include="..\..\..\..\src\CurrentLifetimeScope.cpp" />
+    <ClCompile Include="..\..\..\..\src\DependencyResolutionException.cpp" />
+    <ClCompile Include="..\..\..\..\src\ExternalRegistrySource.cpp" />
+    <ClCompile Include="..\..\..\..\src\ForwardTypeCaster.cpp" />
+    <ClCompile Include="..\..\..\..\src\InstanceActivator.cpp" />
+    <ClCompile Include="..\..\..\..\src\InstanceLookup.cpp" />
+    <ClCompile Include="..\..\..\..\src\KeyedService.cpp" />
+    <ClCompile Include="..\..\..\..\src\LifetimeScope.cpp" />
+    <ClCompile Include="..\..\..\..\src\MatchingScopeLifetime.cpp" />
+    <ClCompile Include="..\..\..\..\src\RegistrationData.cpp" />
+    <ClCompile Include="..\..\..\..\src\ResolveOperation.cpp" />
+    <ClCompile Include="..\..\..\..\src\RootScopeLifetime.cpp" />
+    <ClCompile Include="..\..\..\..\src\ScopeRestrictedRegistry.cpp" />
+    <ClCompile Include="..\..\..\..\src\ServiceKey.cpp" />
+    <ClCompile Include="..\..\..\..\src\ServiceRegistrationInfo.cpp" />
+    <ClCompile Include="..\..\..\..\src\SingleRegistrationStyle.cpp" />
+    <ClCompile Include="..\..\..\..\src\TypedService.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\packaging\nuget\package.bat" />
+    <None Include="..\..\..\..\packaging\nuget\package.config" />
+    <None Include="..\..\..\..\packaging\nuget\package.gsl" />
+    <None Include="..\..\..\..\packaging\nuget\package.nuspec" />
+    <None Include="..\..\..\..\packaging\nuget\package.targets" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\..\packaging\nuget\package.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets'))" />
+  </Target>
+</Project>
