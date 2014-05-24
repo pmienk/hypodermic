@@ -14,7 +14,9 @@
     </Rule.DataSource>
     <EnumProperty Name="Linkage-hypodermic" DisplayName="Linkage" Description="How NuGet hypodermic will be linked into the output of this project" Category="hypodermic">
       <EnumValue Name="" DisplayName="Not linked" />
+      <!--<EnumValue Name="dynamic" DisplayName="Dynamic (DLL)" />-->
       <EnumValue Name="static" DisplayName="Static (LIB)" />
+      <EnumValue Name="ltcg" DisplayName="Static using link time compile generation (LTCG)" />
     </EnumProperty>
   </Rule>
 </ProjectSchemaDefinitions>
