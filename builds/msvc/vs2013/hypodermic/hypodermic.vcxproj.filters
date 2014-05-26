@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\CircularDependencyDetector.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ComponentRegistration.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ComponentRegistrationLifetimeDecorator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ComponentRegistry.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Container.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ContainerActivator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ContainerBuilder.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CopyOnWriteRegistry.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CurrentLifetimeScope.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\DependencyResolutionException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ExternalRegistrySource.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ForwardTypeCaster.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\InstanceActivator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\InstanceLookup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\KeyedService.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\LifetimeScope.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\MatchingScopeLifetime.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\RegistrationData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ResolveOperation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\RootScopeLifetime.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ScopeRestrictedRegistry.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ServiceKey.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\ServiceRegistrationInfo.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SingleRegistrationStyle.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\TypedService.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ActivatedData.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ActivatingData.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\AutowiredConstructor.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\BoostUuidHashFunctor.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\CircularDependencyDetector.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ComponentRegistration.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ComponentRegistrationLifetimeDecorator.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ComponentRegistry.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\Container.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ContainerActivator.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ContainerBuilder.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\CopyOnWriteRegistry.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ContainerBuilder.hpp">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\CurrentLifetimeScope.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\DelegateActivator.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\DelegateActivator.hpp">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\DependencyResolutionException.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ExternalRegistrySource.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ForwardTypeCaster.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\Helpers.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IActivatedData.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IActivatingData.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentContext.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentContext.hpp">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentLifetime.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentRegistration.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IComponentRegistry.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IContainer.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IInitializable.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IInstanceActivator.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IInstanceLookup.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ILifetimeScope.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceActivator.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceLookup.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceOwnership.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\InstanceSharing.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IPreparingData.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IRegistrationBuilder.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IRegistrationSource.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\IResolveOperation.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ISharingLifetimeScope.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ITypeCaster.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\KeyedService.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\LifetimeScope.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\MatchingScopeLifetime.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\NullptrWorkaround.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\PreparingData.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ProvidedInstanceActivator.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ProvidedInstanceActivator.hpp">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilder.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilder.hpp">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilderFactory.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationBuilderFactory.hpp">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypeIndexWorkaround.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypedService.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypeCaster.hpp">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\TypeCaster.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\SingleRegistrationStyle.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ServiceRegistrationInfo.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ServiceKey.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\Service.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ScopeRestrictedRegistry.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RootScopeLifetime.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\resource.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\ResolveOperation.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\Hypodermic\RegistrationData.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\packaging\nuget\package.bat">
+      <Filter>packaging</Filter>
+    </None>
+    <None Include="..\..\..\..\packaging\nuget\package.config">
+      <Filter>packaging</Filter>
+    </None>
+    <None Include="..\..\..\..\packaging\nuget\package.gsl">
+      <Filter>packaging</Filter>
+    </None>
+    <None Include="..\..\..\..\packaging\nuget\package.nuspec">
+      <Filter>packaging</Filter>
+    </None>
+    <None Include="..\..\..\..\packaging\nuget\package.targets">
+      <Filter>packaging</Filter>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="packaging">
+      <UniqueIdentifier>{2ae23017-07f4-43d4-a48f-74c2b66ab8e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes">
+      <UniqueIdentifier>{24094caf-0d22-4b39-98b3-79764f5c035d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{3c803921-8e0e-469b-a624-ba63c50d0033}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\..\packaging\nuget\package.xml">
+      <Filter>packaging</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

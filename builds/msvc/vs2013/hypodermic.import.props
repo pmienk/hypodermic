@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Label="Globals">
+    <_PropertySheetDisplayName>Hypodermic Import Settings</_PropertySheetDisplayName>
+  </PropertyGroup>
+  
+  <!-- User Interface -->
+
+  <ItemGroup Label="BuildOptionsExtension">
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)hypodermic.import.xml" />
+  </ItemGroup>
+  
+  <!-- Linkage -->
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\hypodermic\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Linkage-hypodermic)' == 'static' Or '$(Linkage-hypodermic)' == 'ltcg'">HYPO_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>hypodermic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Debug')) != -1">$(ProjectDir)..\..\..\..\..\hypodermic\bin\$(PlatformName)\Debug\$(PlatformToolset)\$(Linkage-hypodermic)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Release')) != -1">$(ProjectDir)..\..\..\..\..\hypodermic\bin\$(PlatformName)\Release\$(PlatformToolset)\$(Linkage-hypodermic)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <!-- Copy -->
+
+  <Target Name="Linkage-hypodermic-dynamic" AfterTargets="AfterBuild" Condition="'$(Linkage-hypodermic)' == 'dynamic'">
+    <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\hypodermic\bin\$(PlatformName)\Debug\$(PlatformToolset)\dynamic\hypodermic.dll"
+          DestinationFiles="$(TargetDir)hypodermic.dll"
+          SkipUnchangedFiles="true" />
+    <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\hypodermic\bin\$(PlatformName)\Debug\$(PlatformToolset)\dynamic\hypodermic.pdb"
+          DestinationFiles="$(TargetDir)hypodermic.pdb"
+          SkipUnchangedFiles="true" />
+    <Copy Condition="$(Configuration.IndexOf('Release')) != -1"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\hypodermic\bin\$(PlatformName)\Release\$(PlatformToolset)\dynamic\hypodermic.dll"
+          DestinationFiles="$(TargetDir)hypodermic.dll"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Messages -->
+
+  <Target Name="hypodermic-info" BeforeTargets="AfterBuild" Condition="'$(Linkage-hypodermic)' == 'dynamic'">
+    <Message Text="Copying hypodermic.dll -&gt; $(TargetDir)hypodermic.dll" Importance="high"/>
+    <Message Text="Copying hypodermic.pdb -&gt; $(TargetDir)hypodermic.pdb" Importance="high" Condition="$(Configuration.IndexOf('Debug')) != -1" />
+  </Target>
+
+</Project>

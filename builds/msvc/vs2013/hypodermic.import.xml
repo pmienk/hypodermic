@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-#################################################################
-#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
-#################################################################
--->
 <ProjectSchemaDefinitions xmlns="clr-namespace:Microsoft.Build.Framework.XamlTypes;assembly=Microsoft.Build.Framework">
-  <Rule Name="Linkage-hypodermic-uiextension" PageTemplate="tool" DisplayName="NuGet Dependencies" SwitchPrefix="/" Order="1">
+  <Rule Name="hypodermic-linkage-uiextension" PageTemplate="tool" DisplayName="Local Dependencies" SwitchPrefix="/" Order="1">
     <Rule.Categories>
       <Category Name="hypodermic" DisplayName="hypodermic" />
     </Rule.Categories>
     <Rule.DataSource>
       <DataSource Persistence="ProjectFile" ItemType="" />
     </Rule.DataSource>
-    <EnumProperty Name="Linkage-hypodermic" DisplayName="Linkage" Description="How NuGet hypodermic will be linked into the output of this project" Category="hypodermic">
+    <EnumProperty Name="Linkage-hypodermic" DisplayName="Linkage" Description="How hypodermic will be linked into the output of this project" Category="hypodermic">
       <EnumValue Name="" DisplayName="Not linked" />
       <!--<EnumValue Name="dynamic" DisplayName="Dynamic (DLL)" />-->
       <EnumValue Name="static" DisplayName="Static (LIB)" />

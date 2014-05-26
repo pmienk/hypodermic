@@ -7,7 +7,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
     <metadata minClientVersion="2.5">
         <id>hypodermic_vc120</id>
-        <version>0.1.5.1</version>
+        <version>0.1.5.3</version>
         <title>hypodermic_vc120</title>
         <authors>hypodermic contributors</authors>
         <owners>Eric Voskuil</owners>
@@ -23,14 +23,17 @@
         <tags>native, IOC, injection, Hypodermic, Autofac, C++</tags>
         <dependencies>
             <dependency id="boost" version="1.55.0.16" />
+            <dependency id="boost_chrono-vc120" version="1.55.0.16" />
+            <dependency id="boost_date_time-vc120" version="1.55.0.16" />
             <dependency id="boost_system-vc120" version="1.55.0.16" />
+            <dependency id="boost_thread-vc120" version="1.55.0.16" />
         </dependencies>
     </metadata>
     <files>
         <!-- include -->
                 
-        <file src="..\..\Hypodermic\*.h" target="build\native\include\Hypodermic" />
-        <file src="..\..\Hypodermic\*.hpp" target="build\native\include\Hypodermic" />          
+        <file src="..\..\include\Hypodermic\*.h" target="build\native\include\Hypodermic" />
+        <file src="..\..\include\Hypodermic\*.hpp" target="build\native\include\Hypodermic" />           
 
         <!-- targets -->
       
@@ -39,13 +42,53 @@
                 
         <!-- libraries -->
 
-        <!-- x86 Static libraries (.lib) and debug symbols (.pdb) -->
-        <file src="..\..\lib\hypodermic-vc120.lib" target="build\native\bin\hypodermic-x86-v120-mt-s-0_1_5_1.lib" />
-        <file src="..\..\lib\hypodermic-vc120.pdb" target="build\native\bin\hypodermic-x86-v120-mt-s-0_1_5_1.pdb" />
+        <!-- x86 Dynamic libraries (.dll) -->
+        <!--<file src="..\..\bin\Win32\Release\v120\dynamic\hypodermic.dll" target="build\native\bin\hypodermic-x86-v120-mt-0_1_5_3.dll" />-->
+        <!--<file src="..\..\bin\Win32\Debug\v120\dynamic\hypodermic.dll" target="build\native\bin\hypodermic-x86-v120-mt-gd-0_1_5_3.dll" />-->
 
-        <!-- x64 Static libraries (.lib) and debug symbols (.pdb) -->
-        <file src="..\..\lib\x64\hypodermic-vc120.lib" target="build\native\bin\hypodermic-x64-v120-mt-s-0_1_5_1.lib" />
-        <file src="..\..\lib\x64\hypodermic-vc120.pdb" target="build\native\bin\hypodermic-x64-v120-mt-s-0_1_5_1.pdb" />
+        <!-- x86 Debugging symbols (.pdb) -->
+        <!--<file src="..\..\bin\Win32\Release\v120\dynamic\hypodermic.pdb" target="build\native\bin\hypodermic-x86-v120-mt-0_1_5_3.pdb" />-->
+        <!--<file src="..\..\bin\Win32\Debug\v120\dynamic\hypodermic.pdb" target="build\native\bin\hypodermic-x86-v120-mt-gd-0_1_5_3.pdb" />-->
+
+        <!-- x86 Import libraries (.imp.lib) -->
+        <!--<file src="..\..\bin\Win32\Release\v120\dynamic\hypodermic.lib" target="build\native\bin\hypodermic-x86-v120-mt-0_1_5_3.imp.lib" />-->
+        <!--<file src="..\..\bin\Win32\Debug\v120\dynamic\hypodermic.lib" target="build\native\bin\hypodermic-x86-v120-mt-gd-0_1_5_3.imp.lib" />-->
+
+        <!-- x86 Export libraries (.exp) -->
+        <!--<file src="..\..\bin\Win32\Release\v120\dynamic\hypodermic.exp" target="build\native\bin\hypodermic-x86-v120-mt-0_1_5_3.exp" />-->
+        <!--<file src="..\..\bin\Win32\Debug\v120\dynamic\hypodermic.exp" target="build\native\bin\hypodermic-x86-v120-mt-gd-0_1_5_3.exp" />-->
+
+        <!-- x86 Static libraries (.lib) -->
+        <file src="..\..\bin\Win32\Release\v120\static\hypodermic.lib" target="build\native\bin\hypodermic-x86-v120-mt-s-0_1_5_3.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\static\hypodermic.lib" target="build\native\bin\hypodermic-x86-v120-mt-sgd-0_1_5_3.lib" />
+
+        <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\..\bin\Win32\Release\v120\ltcg\hypodermic.lib" target="build\native\bin\hypodermic-x86-v120-mt-s-0_1_5_3.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\ltcg\hypodermic.lib" target="build\native\bin\hypodermic-x86-v120-mt-sgd-0_1_5_3.ltcg.lib" />
+
+        <!-- x64 Dynamic libraries (.dll) -->
+        <!--<file src="..\..\bin\x64\Release\v120\dynamic\hypodermic.dll" target="build\native\bin\hypodermic-x64-v120-mt-0_1_5_3.dll" />-->
+        <!--<file src="..\..\bin\x64\Debug\v120\dynamic\hypodermic.dll" target="build\native\bin\hypodermic-x64-v120-mt-gd-0_1_5_3.dll" />-->
+
+        <!-- x64 Debugging symbols (.pdb) -->
+        <!--<file src="..\..\bin\x64\Release\v120\dynamic\hypodermic.pdb" target="build\native\bin\hypodermic-x64-v120-mt-0_1_5_3.pdb" />-->
+        <!--<file src="..\..\bin\x64\Debug\v120\dynamic\hypodermic.pdb" target="build\native\bin\hypodermic-x64-v120-mt-gd-0_1_5_3.pdb" />-->
+
+        <!-- x64 Import libraries (.imp.lib) -->
+        <!--<file src="..\..\bin\x64\Release\v120\dynamic\hypodermic.lib" target="build\native\bin\hypodermic-x64-v120-mt-0_1_5_3.imp.lib" />-->
+        <!--<file src="..\..\bin\x64\Debug\v120\dynamic\hypodermic.lib" target="build\native\bin\hypodermic-x64-v120-mt-gd-0_1_5_3.imp.lib" />-->
+
+        <!-- x64 Export libraries (.exp) -->
+        <!--<file src="..\..\bin\x64\Release\v120\dynamic\hypodermic.exp" target="build\native\bin\hypodermic-x64-v120-mt-0_1_5_3.exp" />-->
+        <!--<file src="..\..\bin\x64\Debug\v120\dynamic\hypodermic.exp" target="build\native\bin\hypodermic-x64-v120-mt-gd-0_1_5_3.exp" />-->
+
+        <!-- x64 Static libraries (.lib) -->
+        <file src="..\..\bin\x64\Release\v120\static\hypodermic.lib" target="build\native\bin\hypodermic-x64-v120-mt-s-0_1_5_3.lib" />
+        <file src="..\..\bin\x64\Debug\v120\static\hypodermic.lib" target="build\native\bin\hypodermic-x64-v120-mt-sgd-0_1_5_3.lib" />
+
+        <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\..\bin\x64\Release\v120\ltcg\hypodermic.lib" target="build\native\bin\hypodermic-x64-v120-mt-s-0_1_5_3.ltcg.lib" />
+        <file src="..\..\bin\x64\Debug\v120\ltcg\hypodermic.lib" target="build\native\bin\hypodermic-x64-v120-mt-sgd-0_1_5_3.ltcg.lib" />
     </files>
 <!--
 #################################################################
