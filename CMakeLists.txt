@@ -44,9 +44,27 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILER_FLAGS} ${WARNING_FLAGS}")
 
 
-add_subdirectory(Hypodermic)
-add_subdirectory(Hypodermic.Tests)
+add_subdirectory(include/Hypodermic)
+add_subdirectory(src)
+add_subdirectory(tests)
 
+#########################################
+# pkgconfig
+#########################################
+set(VERSION "${HYPODERMIC_VERSION}")
+set(prefix "${CMAKE_INSTALL_PREFIX}")
+set(exec_prefix "\${prefix}")
+set(libdir "\${prefix}/lib")
+set(includedir "\${prefix}/include")
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/libhypodermic.pc.in
+    ${CMAKE_CURRENT_BINARY_DIR}/libhypodermic.pc
+@ONLY)
+
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/libhypodermic.pc
+    DESTINATION lib/pkgconfig
+)
 
 # uninstall target
 ##################

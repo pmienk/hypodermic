@@ -1,0 +1,73 @@
+project(Hypodermic)
+cmake_minimum_required(VERSION 2.6)
+
+set(Hypodermic_headers
+    ActivatedData.h
+    ActivatingData.h
+    AutowiredConstructor.h
+    BoostUuidHashFunctor.h
+    CircularDependencyDetector.h
+    ComponentRegistration.h
+    ComponentRegistrationLifetimeDecorator.h
+    ComponentRegistry.h
+    ContainerActivator.h
+    ContainerBuilder.h
+    ContainerBuilder.hpp
+    Container.h
+    CopyOnWriteRegistry.h
+    CurrentLifetimeScope.h
+    DelegateActivator.h
+    DelegateActivator.hpp
+    DependencyResolutionException.h
+    ExternalRegistrySource.h
+    ForwardTypeCaster.h
+    Helpers.h
+    IActivatedData.h
+    IActivatingData.h
+    IComponentContext.h
+    IComponentContext.hpp
+    IComponentLifetime.h
+    IComponentRegistration.h
+    IComponentRegistry.h
+    IContainer.h
+    IInitializable.h
+    IInstanceActivator.h
+    IInstanceLookup.h
+    ILifetimeScope.h
+    InstanceActivator.h
+    InstanceLookup.h
+    InstanceOwnership.h
+    InstanceSharing.h
+    IPreparingData.h
+    IRegistrationBuilder.h
+    IRegistrationSource.h
+    IResolveOperation.h
+    ISharingLifetimeScope.h
+    ITypeCaster.h
+    KeyedService.h
+    libsel.h
+    LifetimeScope.h
+    MatchingScopeLifetime.h
+    NullptrWorkaround.h
+    PreparingData.h
+    ProvidedInstanceActivator.h
+    ProvidedInstanceActivator.hpp
+    RegistrationBuilderFactory.h
+    RegistrationBuilderFactory.hpp
+    RegistrationBuilder.h
+    RegistrationBuilder.hpp
+    RegistrationData.h
+    ResolveOperation.h
+    RootScopeLifetime.h
+    ScopeRestrictedRegistry.h
+    Service.h
+    ServiceKey.h
+    ServiceRegistrationInfo.h
+    SingleRegistrationStyle.h
+    TypeCaster.h
+    TypeCaster.hpp
+    TypedService.h
+    TypeIndexWorkaround.h
+)
+
+install(FILES ${Hypodermic_headers} DESTINATION include/Hypodermic)
