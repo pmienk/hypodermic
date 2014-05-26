@@ -14,7 +14,7 @@ set(HypodermicTests_sources
     ContainerBuilderTests.cpp
 )
 
-include_directories("..")
+include_directories("../include")
 
 add_definitions(-DBOOST_TEST_DYN_LINK)
 add_executable(Hypodermic.Tests ${HypodermicTests_sources})
