@@ -30,3 +30,11 @@ Makefile
 /bin/
 /obj/
 /build/
+/lib/
+
+# Visual Studio
+
+*.sdf
+*.opensdf
+*.v12.suo
+*.aps
