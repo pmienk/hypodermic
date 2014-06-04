@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="2.5">
+        <id>hypodermic_vc120</id>
+        <version>0.1.5.1</version>
+        <title>hypodermic_vc120</title>
+        <authors>hypodermic contributors</authors>
+        <owners>Eric Voskuil</owners>
+        <licenseUrl>http://opensource.org/licenses/mit-license.php</licenseUrl>
+        <projectUrl>https://code.google.com/p/hypodermic</projectUrl>
+        <iconUrl>https://code.google.com/p/hypodermic/logo?cct=1328405883</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <developmentDependency>false</developmentDependency>
+        <description>Hypodermic is an IoC container for C++11. It provides dependency injection to your existing design.</description>
+        <summary>Hypodermic, packaged for Visual Studio 2013 (v120) and CTP_Nov2013 compilers.</summary>
+        <releaseNotes>https://code.google.com/p/hypodermic/source/list</releaseNotes>
+        <copyright>(c) hypodermic contributors, MIT License</copyright>
+        <tags>native, IOC, injection, Hypodermic, Autofac, C++</tags>
+        <dependencies>
+            <dependency id="boost" version="1.55.0.16" />
+            <dependency id="boost_system-vc120" version="1.55.0.16" />
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- include -->
+                
+        <file src="..\..\Hypodermic\*.h" target="build\native\include\Hypodermic" />
+        <file src="..\..\Hypodermic\*.hpp" target="build\native\include\Hypodermic" />          
+
+        <!-- targets -->
+      
+        <file src="package.targets" target="build\native\hypodermic_vc120.targets" />
+        <file src="package.xml" target="build\native\package.xml" />
+                
+        <!-- libraries -->
+
+        <!-- x86 Static libraries (.lib) and debug symbols (.pdb) -->
+        <file src="..\..\lib\hypodermic-vc120.lib" target="build\native\bin\hypodermic-x86-v120-mt-s-0_1_5_1.lib" />
+        <file src="..\..\lib\hypodermic-vc120.pdb" target="build\native\bin\hypodermic-x86-v120-mt-s-0_1_5_1.pdb" />
+
+        <!-- x64 Static libraries (.lib) and debug symbols (.pdb) -->
+        <file src="..\..\lib\x64\hypodermic-vc120.lib" target="build\native\bin\hypodermic-x64-v120-mt-s-0_1_5_1.lib" />
+        <file src="..\..\lib\x64\hypodermic-vc120.pdb" target="build\native\bin\hypodermic-x64-v120-mt-s-0_1_5_1.pdb" />
+    </files>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+</package>

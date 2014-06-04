@@ -1,0 +1,133 @@
+.#  Generate NuGet nuspec file (for subsequent packing).
+.#
+.#  This is a code generator built using the iMatix GSL code generation
+.#  language. See https://github.com/imatix/gsl for details. This script
+.#  is licensed under MIT/X11.
+.#
+.echo "Generating package.nuspec from template."
+.output "package.nuspec"
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="2.5">
+        <id>$(package.id)</id>
+        <version>$(package.version)</version>
+        <title>$(package.id)</title>
+        <authors>hypodermic contributors</authors>
+        <owners>Eric Voskuil</owners>
+        <licenseUrl>http://opensource.org/licenses/mit-license.php</licenseUrl>
+        <projectUrl>https://code.google.com/p/hypodermic</projectUrl>
+        <iconUrl>https://code.google.com/p/hypodermic/logo?cct=1328405883</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <developmentDependency>false</developmentDependency>
+        <description>Hypodermic is an IoC container for C++11. It provides dependency injection to your existing design.</description>
+        <summary>Hypodermic, packaged for Visual Studio 2013 (v120) and CTP_Nov2013 compilers.</summary>
+        <releaseNotes>https://code.google.com/p/hypodermic/source/list</releaseNotes>
+        <copyright>(c) hypodermic contributors, MIT License</copyright>
+        <tags>native, IOC, injection, Hypodermic, Autofac, C++</tags>
+        <dependencies>
+.for dependency
+            <dependency id="$(id)" version="$(version)" />
+.endfor
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- include -->
+                
+        <file src="..\\..\\Hypodermic\\*.h" target="build\\native\\include\\Hypodermic" />
+        <file src="..\\..\\Hypodermic\\*.hpp" target="build\\native\\include\\Hypodermic" />    
+
+        <!-- targets -->
+      
+        <file src="package.targets" target="build\\native\\$(package.id).targets" />
+        <file src="package.xml" target="build\\native\\package.xml" />
+                
+        <!-- libraries -->
+
+        <!-- x86 Static libraries (.lib) and debug symbols (.pdb) -->
+        <file src="..\\..\\lib\\$(package.target)-$(package.platform).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
+        <file src="..\\..\\lib\\$(package.target)-$(package.platform).pdb" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).pdb" />
+
+        <!-- x64 Static libraries (.lib) and debug symbols (.pdb) -->
+        <file src="..\\..\\lib\\x64\\$(package.target)-$(package.platform).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
+        <file src="..\\..\\lib\\x64\\$(package.target)-$(package.platform).pdb" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).pdb" />
+    </files>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+</package>
+.echo "Generating package.targets from template."
+.output "package.targets"
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- user interface -->
+  <ItemGroup>
+    <PropertyPageSchema Include="$\(MSBuildThisFileDirectory)package.xml" />
+  </ItemGroup>
+
+  <!-- general -->
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$\(MSBuildThisFileDirectory)include\\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$\(MSBuildThisFileDirectory)bin\\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Linkage-$(package.target))' == 'static' Or '$\(Linkage-$(package.target))' == 'ltcg'">
+    <ClCompile>
+      <PreprocessorDefinitions>SODIUM_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <!-- static libraries -->
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+</Project>
+.echo "Generating package.xml (ui extension) from template."
+.output "package.xml"
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<ProjectSchemaDefinitions xmlns="clr-namespace:Microsoft.Build.Framework.XamlTypes;assembly=Microsoft.Build.Framework">
+  <Rule Name="Linkage-$(package.target)-uiextension" PageTemplate="tool" DisplayName="NuGet Dependencies" SwitchPrefix="/" Order="1">
+    <Rule.Categories>
+      <Category Name="$(package.target)" DisplayName="$(package.target)" />
+    </Rule.Categories>
+    <Rule.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="" />
+    </Rule.DataSource>
+    <EnumProperty Name="Linkage-$(package.target)" DisplayName="Linkage" Description="How NuGet $(package.target) will be linked into the output of this project" Category="$(package.target)">
+      <EnumValue Name="" DisplayName="Not linked" />
+      <EnumValue Name="static" DisplayName="Static (LIB)" />
+    </EnumProperty>
+  </Rule>
+</ProjectSchemaDefinitions>
