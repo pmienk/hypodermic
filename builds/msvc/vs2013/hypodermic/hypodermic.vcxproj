@@ -66,11 +66,6 @@
     <Import Project="$(ProjectDir)..\..\properties\$(Configuration).props" />
     <Import Project="$(ProjectDir)..\..\properties\Output.props" />
     <Import Project="$(ProjectDir)$(ProjectName).props" />
-    <Import Project="..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets')" />
-    <Import Project="..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets')" />
-    <Import Project="..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets')" />
-    <Import Project="..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets')" />
-    <Import Project="..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets')" />
   </ImportGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\include\Hypodermic\ActivatedData.h" />
@@ -182,6 +177,11 @@
     <ResourceCompile Include="..\..\resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost.1.55.0.16\build\native\boost.targets')" />
+  <Import Project="..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_thread-vc120.1.55.0.16\build\native\boost_thread-vc120.targets')" />
+  <Import Project="..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_date_time-vc120.1.55.0.16\build\native\boost_date_time-vc120.targets')" />
+  <Import Project="..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_chrono-vc120.1.55.0.16\build\native\boost_chrono-vc120.targets')" />
+  <Import Project="..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets" Condition="Exists('..\..\..\..\..\..\nuget\boost_system-vc120.1.55.0.16\build\native\boost_system-vc120.targets')" />  
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>

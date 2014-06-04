@@ -19,7 +19,7 @@
       <PreprocessorDefinitions Condition="'$(Linkage-hypodermic)' == 'static' Or '$(Linkage-hypodermic)' == 'ltcg'">HYPO_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>hypodermic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Linkage-hypodermic)' != ''">hypodermic.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Debug')) != -1">$(ProjectDir)..\..\..\..\..\hypodermic\bin\$(PlatformName)\Debug\$(PlatformToolset)\$(Linkage-hypodermic)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Release')) != -1">$(ProjectDir)..\..\..\..\..\hypodermic\bin\$(PlatformName)\Release\$(PlatformToolset)\$(Linkage-hypodermic)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
